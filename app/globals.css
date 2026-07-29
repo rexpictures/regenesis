@@ -712,12 +712,15 @@ body {
 }
 .theme-nature .hero {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(780px, auto);
   min-height: 780px;
   margin: 0;
 }
 .theme-nature .hero-copy,
 .theme-nature .hero-art {
-  grid-area: 1 / 1;
+  grid-area: 1 / 1 / 2 / 2;
+  width: 100%;
 }
 .theme-nature .hero-art {
   min-height: 780px;
@@ -739,10 +742,12 @@ body {
   background: linear-gradient(180deg, rgba(13, 49, 80, .06), rgba(9, 40, 67, .2));
 }
 .theme-nature .hero-copy {
-  width: min(680px, 58%);
   padding: 88px 7vw;
   color: #fff;
   text-shadow: 0 2px 22px rgba(9, 42, 69, .22);
+}
+.theme-nature .hero-copy > * {
+  max-width: 570px;
 }
 .theme-nature .eyebrow {
   color: #fff4d0;
