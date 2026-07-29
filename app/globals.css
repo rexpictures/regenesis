@@ -649,3 +649,257 @@ body {
 @media (max-width: 560px) {
   .contact-actions { flex-direction: column; gap: 24px; }
 }
+
+/* Three distinct photographic directions */
+.hero-note,
+.hero-art > .sun,
+.hero-art > .land,
+.hero-art > .water-lines {
+  display: none;
+}
+
+.hero-art {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero-art::before {
+  animation: none;
+}
+.hero-art::after {
+  mix-blend-mode: normal;
+}
+.hero-art p {
+  max-width: 250px;
+  padding-left: 24px;
+  border-left: 1px solid rgba(255, 255, 255, .62);
+  text-shadow: 0 2px 18px rgba(31, 18, 35, .75);
+}
+
+/* 01 — warm, editorial dawn */
+.theme-quiet .hero {
+  grid-template-columns: 1.08fr .92fr;
+}
+.theme-quiet .hero-art {
+  background-image: url("/images/sunrise-mountains.jpg");
+  background-position: 46% center;
+}
+.theme-quiet .hero-art::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(74, 35, 37, .08), transparent 44%);
+}
+.theme-quiet .hero-art::after {
+  background: linear-gradient(180deg, transparent 40%, rgba(45, 24, 38, .5));
+}
+
+/* 02 — immersive blue-sky spiritual direction */
+.theme-nature {
+  --ink: #183957;
+  --paper: #f6fbfe;
+  --card: #dcecf5;
+  --accent: #235f8e;
+  --accent-soft: #f1c46c;
+  --line: rgba(24, 57, 87, .2);
+}
+.theme-nature .page-shell {
+  box-shadow: 0 28px 90px rgba(22, 55, 82, .2);
+}
+.theme-nature .brand-mark {
+  background: #235f8e;
+}
+.theme-nature .hero {
+  display: grid;
+  min-height: 780px;
+  margin: 0;
+}
+.theme-nature .hero-copy,
+.theme-nature .hero-art {
+  grid-area: 1 / 1;
+}
+.theme-nature .hero-art {
+  min-height: 780px;
+  margin: 0;
+  border-radius: 0;
+  background-image: url("/images/blue-sky.jpg");
+  background-position: center 42%;
+}
+.theme-nature .hero-art::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 76% 25%, rgba(255, 255, 255, .12), transparent 25%),
+    linear-gradient(90deg, rgba(10, 43, 76, .86) 0%, rgba(17, 66, 105, .63) 42%, rgba(25, 91, 139, .06) 74%);
+}
+.theme-nature .hero-art::after {
+  background: linear-gradient(180deg, rgba(13, 49, 80, .06), rgba(9, 40, 67, .2));
+}
+.theme-nature .hero-copy {
+  width: min(720px, 62%);
+  padding: 105px 7vw;
+  color: #fff;
+  text-shadow: 0 2px 22px rgba(9, 42, 69, .22);
+}
+.theme-nature .eyebrow {
+  color: #fff4d0;
+}
+.theme-nature .hero h1 {
+  font-size: clamp(70px, 8vw, 120px);
+  line-height: .89;
+}
+.theme-nature .hero h1 em {
+  color: #fff4d0;
+}
+.theme-nature .hero-intro {
+  max-width: 540px;
+  color: #fff;
+}
+.theme-nature .hero .primary-btn {
+  background: #fff;
+  color: #183957;
+  box-shadow: 0 15px 38px rgba(8, 38, 65, .25);
+}
+.theme-nature .hero .secondary-link {
+  color: #fff;
+}
+.theme-nature .hero-art p {
+  right: 6%;
+  bottom: 8%;
+}
+.theme-nature .program-section {
+  background:
+    radial-gradient(circle at 8% 6%, rgba(97, 174, 221, .26), transparent 30rem),
+    #173b59;
+}
+.theme-nature .contact-section {
+  background:
+    radial-gradient(circle at 50% 120%, rgba(241, 196, 108, .28), transparent 42%),
+    #235f8e;
+}
+
+/* 03 — ordered twilight, image-first composition */
+.theme-structured {
+  --ink: #22334f;
+  --paper: #fff9f1;
+  --card: #e6e8f0;
+  --accent: #a93d2e;
+  --accent-soft: #f3ae57;
+  --line: rgba(34, 51, 79, .2);
+}
+.theme-structured .hero {
+  grid-template-columns: .92fr 1.08fr;
+  grid-template-areas: "art copy";
+  min-height: 760px;
+}
+.theme-structured .hero-copy {
+  grid-area: copy;
+  min-height: 760px;
+  padding: 100px 6vw;
+  align-items: flex-start;
+  text-align: left;
+  background:
+    linear-gradient(135deg, rgba(230, 232, 240, .62), transparent 44%),
+    var(--paper);
+}
+.theme-structured .hero-copy::before {
+  left: auto;
+  right: -18%;
+  top: 12%;
+  transform: none;
+  border-radius: 0;
+  border-color: rgba(34, 51, 79, .12);
+  box-shadow: 48px 48px 0 rgba(243, 174, 87, .06);
+  rotate: 12deg;
+}
+.theme-structured .hero h1 {
+  margin-inline: 0;
+  text-align: left;
+  font-family: "Avenir Next", "Segoe UI", Arial, sans-serif;
+  font-size: clamp(58px, 6.2vw, 92px);
+  font-weight: 750;
+  letter-spacing: -.07em;
+  line-height: .9;
+}
+.theme-structured .hero h1 em {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  color: var(--accent);
+}
+.theme-structured .hero-intro {
+  margin-inline: 0;
+}
+.theme-structured .hero-actions {
+  justify-content: flex-start;
+}
+.theme-structured .hero-art {
+  grid-area: art;
+  min-height: 760px;
+  border: 0;
+  background-image: url("/images/blue-orange-twilight.jpg");
+  background-position: 55% center;
+}
+.theme-structured .hero-art::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(20, 47, 78, .08), rgba(49, 32, 58, .16));
+}
+.theme-structured .hero-art::after {
+  background: linear-gradient(180deg, transparent 50%, rgba(38, 29, 49, .52));
+}
+.theme-structured .hero-art p {
+  left: 7%;
+  right: auto;
+  text-align: left;
+}
+.theme-structured .program-section {
+  background:
+    radial-gradient(circle at 8% 6%, rgba(243, 174, 87, .2), transparent 30rem),
+    #22334f;
+}
+
+@media (max-width: 900px) {
+  .theme-quiet .hero,
+  .theme-structured .hero {
+    grid-template-columns: 1fr;
+    grid-template-areas: "copy" "art";
+  }
+  .theme-nature .hero-copy {
+    width: min(780px, 88%);
+  }
+  .theme-structured .hero-copy,
+  .theme-structured .hero-art {
+    min-height: 620px;
+  }
+}
+
+@media (max-width: 560px) {
+  .theme-nature .hero,
+  .theme-nature .hero-art {
+    min-height: 680px;
+  }
+  .theme-nature .hero-copy {
+    width: 100%;
+    padding: 82px 24px 150px;
+    background: linear-gradient(90deg, rgba(10, 43, 76, .4), transparent);
+  }
+  .theme-nature .hero h1 {
+    font-size: 58px;
+  }
+  .theme-nature .hero-art p {
+    right: 24px;
+    bottom: 28px;
+  }
+  .theme-structured .hero-copy {
+    min-height: 610px;
+    padding: 84px 24px;
+  }
+  .theme-structured .hero-art {
+    min-height: 500px;
+  }
+}

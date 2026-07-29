@@ -52,6 +52,12 @@ const heroMessages: Record<Variant, { lead: string; accent: string }> = {
   structured: { lead: "Offering", accent: "wellness to all." },
 };
 
+const heroImageAlt: Record<Variant, string> = {
+  quiet: "Golden sunrise illuminating mist-covered mountain ranges",
+  nature: "An expansive blue sky crossed by soft, feather-like clouds",
+  structured: "A blue twilight sky warming to orange along the horizon",
+};
+
 function Brand() {
   return (
     <a className="brand" href="#top" aria-label="Regenesis home">
@@ -120,18 +126,8 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="hero-art" aria-hidden="true">
-            <div className="sun" />
-            <div className="land land-one" />
-            <div className="land land-two" />
-            <div className="water-lines" />
+          <div className="hero-art" role="img" aria-label={heroImageAlt[variant]}>
             <p>Freedom begins<br />with being seen<br />as a whole person.</p>
-          </div>
-          <div className="hero-note">
-            <span>01</span>
-            <p>Part-time and non-residential</p>
-            <span>02</span>
-            <p>Individual and community-based</p>
           </div>
         </section>
 
