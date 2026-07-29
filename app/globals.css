@@ -739,8 +739,8 @@ body {
   background: linear-gradient(180deg, rgba(13, 49, 80, .06), rgba(9, 40, 67, .2));
 }
 .theme-nature .hero-copy {
-  width: min(720px, 62%);
-  padding: 105px 7vw;
+  width: min(680px, 58%);
+  padding: 88px 7vw;
   color: #fff;
   text-shadow: 0 2px 22px rgba(9, 42, 69, .22);
 }
@@ -748,8 +748,8 @@ body {
   color: #fff4d0;
 }
 .theme-nature .hero h1 {
-  font-size: clamp(70px, 8vw, 120px);
-  line-height: .89;
+  font-size: clamp(66px, 7.2vw, 106px);
+  line-height: .91;
 }
 .theme-nature .hero h1 em {
   color: #fff4d0;
@@ -767,8 +767,27 @@ body {
   color: #fff;
 }
 .theme-nature .hero-art p {
-  right: 6%;
-  bottom: 8%;
+  width: min(300px, 27vw);
+  max-width: 300px;
+  right: 7%;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  padding: 30px 0 30px 28px;
+  border-left-color: rgba(24, 57, 87, .45);
+  color: #183957;
+  text-align: left;
+  text-shadow: none;
+  font-size: 25px;
+  line-height: 1.42;
+}
+.theme-nature .hero-art p::before {
+  content: "A WHOLE-PERSON PATHWAY";
+  display: block;
+  margin-bottom: 18px;
+  color: #235f8e;
+  font: 700 10px/1.4 "Avenir Next", "Segoe UI", Arial, sans-serif;
+  letter-spacing: .2em;
 }
 .theme-nature .program-section {
   background:
@@ -893,7 +912,19 @@ body {
   }
   .theme-nature .hero-art p {
     right: 24px;
+    top: auto;
     bottom: 28px;
+    width: min(280px, calc(100% - 48px));
+    max-width: 280px;
+    transform: none;
+    padding: 20px 0 20px 20px;
+    border-left-color: rgba(255, 255, 255, .62);
+    color: #fff;
+    text-shadow: 0 2px 18px rgba(9, 42, 69, .75);
+    font-size: 19px;
+  }
+  .theme-nature .hero-art p::before {
+    color: #fff4d0;
   }
   .theme-structured .hero-copy {
     min-height: 610px;
